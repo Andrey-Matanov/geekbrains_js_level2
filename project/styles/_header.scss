@@ -1,0 +1,95 @@
+.header {
+    padding-left: 10px;
+    background-color: $primaryColor;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+
+    &__logo {
+        width: 150px;
+    }
+
+    &__basket_button {
+        padding: 0 20px;
+    }
+}
+
+.nav {
+    display: flex;
+    margin: 0 auto;
+    align-items: initial;
+
+    &__link {
+        display: block;
+        color: $secondaryColor;
+        padding: 20px;
+
+        &:hover {
+            background-color: $secondaryColor;
+            color: $primaryColor;
+        }
+    }
+}
+
+.basket {
+    padding: 10px;
+    border: 1px solid $primaryColor;
+    border-radius: 10px;
+    opacity: 0;
+    right: 0;
+    top: 68px;
+    position: absolute;
+    background-color: $primaryColor;
+    color: $secondaryColor;
+
+    &_active {
+        opacity: 100%;
+    }
+
+    &__message {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    &__amount {
+        text-align: center;
+        color: $secondaryColor;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba($color: $secondaryColor, $alpha: 0.5);
+        margin-bottom: 10px;
+    }
+
+    &__item {
+        padding: 10px;
+        border: 2px solid $primaryColor;
+        border-radius: 10px;
+        background-color: $secondaryColor;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $primaryColor;
+        margin-bottom: 10px;
+
+        &_image {
+            width: 50px;
+            height: 50px;
+        }
+
+        &_description {
+            width: 50%;
+            text-align: right;
+        }
+    }
+
+    &__to_checkout_link {
+        border-top: 1px solid rgba($color: $secondaryColor, $alpha: 0.5);
+        padding-top: 10px;
+        display: block;
+        text-align: center;
+        color: $secondaryColor;
+    }
+}

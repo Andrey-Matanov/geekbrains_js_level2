@@ -1,0 +1,14 @@
+.footer {
+    padding: 10px 0;
+    background-color: black;
+    color: white;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__link {
+        color: white;
+    }
+}
