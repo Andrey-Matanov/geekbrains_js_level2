@@ -1,0 +1,49 @@
+.checkout_basket {
+    padding: 20px 0;
+
+    &__heading {
+        margin-bottom: 20px;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.goods {
+    flex-basis: 50%;
+    border-right: 1px solid black;
+    margin-right: 20px;
+}
+
+.goods__item {
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+
+    &:last-child {
+        margin-bottom: 0;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    &_description {
+        padding-left: 20px;
+    }
+}
+
+.basket_description {
+    flex-basis: 50%;
+
+    &__heading {
+        margin-bottom: 20px;
+    }
+
+    &__total_prices {
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,34 @@
+[
+    {
+        "id": 115,
+        "title": "Футболка",
+        "discount": 5,
+        "price": 150,
+        "img": "tshirt.jpg",
+        "fullname": "tshirt"
+    },
+    {
+        "id": 234,
+        "title": "Носки",
+        "price": 50,
+        "discount": 0,
+        "img": "socks.jpg",
+        "fullname": "socks"
+    },
+    {
+        "id": 567,
+        "title": "Куртка",
+        "price": 350,
+        "discount": 5,
+        "img": "jacket.jpg",
+        "fullname": "jacket"
+    },
+    {
+        "id": 875,
+        "title": "Мужские туфли",
+        "price": 250,
+        "discount": 10,
+        "img": "shoes.jpg",
+        "fullname": "men_shoes"
+    }
+]
