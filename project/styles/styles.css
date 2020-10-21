@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -19,6 +20,19 @@ a {
 body {
   max-width: 1440px;
   margin: 0 auto;
+}
+
+li {
+  list-style: none;
+}
+
+textarea {
+  resize: none;
+}
+
+input,
+textarea {
+  outline: none;
 }
 
 .root {
@@ -300,5 +314,117 @@ body {
 
 .footer__link {
   color: white;
+}
+
+.heading {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.contacts_page__wrapper {
+  padding: 20px 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contact_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-preferred-size: 55%;
+      flex-basis: 55%;
+}
+
+.contact_form__label {
+  padding-left: 5px;
+  margin-bottom: 5px;
+  color: #3c27ac;
+}
+
+.contact_form__label::after {
+  color: red;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.contact_form__label_name_error::after {
+  content: "Имя должно содержать только буквы русского и/или английского языка";
+}
+
+.contact_form__label_phone_error::after {
+  content: "Номер телефона должен иметь следующий вид: +7(000)000-0000";
+}
+
+.contact_form__label_email_error::after {
+  content: "Название email должно иметь один из следующих видов: mymail@mail.ru, my.mail@mail.ru или my-mail@mail.ru";
+}
+
+.contact_form__input {
+  padding: 5px;
+  border: 1px solid #3c27ac;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.contact_form__input__success {
+  border: 1px solid green;
+}
+
+.contact_form__input__failure {
+  border: 1px solid red;
+}
+
+.contact_form__textarea {
+  height: 50px;
+}
+
+.contact_form__button {
+  padding: 5px;
+  border: 1px solid #3c27ac;
+  border-radius: 5px;
+  color: #3c27ac;
+}
+
+.contact_form__button:hover {
+  background-color: #3c27ac;
+  color: white;
+}
+
+.contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contacts__title {
+  margin-bottom: 10px;
+}
+
+.contacts__list {
+  margin-bottom: 20px;
+}
+
+.contacts__list:last-child {
+  margin-bottom: 0;
+}
+
+.contacts__item {
+  margin-bottom: 10px;
+}
+
+.contacts__item:last-child {
+  margin-bottom: 0;
 }
 /*# sourceMappingURL=styles.css.map */
