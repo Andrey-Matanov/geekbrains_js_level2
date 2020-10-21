@@ -16,7 +16,6 @@ export default class Basket {
                 basketItems = "Корзина недоступна";
             })
             .finally(() => {
-                console.log("basket", this.items);
                 this.render(script);
             });
     }
@@ -24,7 +23,6 @@ export default class Basket {
     addItem = (event) => {
         console.log(event.target.dataset.fullname);
         for (let item of this.items) {
-            console.log(item.fullname);
             if (item.fullname === event.target.dataset.fullname) {
                 item.amount += 1;
             }
@@ -37,7 +35,6 @@ export default class Basket {
             let newBasketItem = new BasketItem(
                 ...Object.values(fetchedItems[item])
             );
-            console.log(newBasketItem);
             this.items.push(newBasketItem);
         }
     }
