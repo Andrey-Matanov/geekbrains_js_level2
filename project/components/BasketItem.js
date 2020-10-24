@@ -1,7 +1,8 @@
 export default class BasketItem {
-    constructor(id, title, discount, price, amount, img, fullname) {
+    constructor(id, title, category, discount, fullname, price, img, amount) {
         this.id = id;
         this.title = title;
+        this.category = category;
         this.price = price;
         this.discount = discount;
         this.img = img;

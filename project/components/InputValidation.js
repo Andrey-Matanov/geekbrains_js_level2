@@ -24,7 +24,9 @@ class InputValidation {
             case "email": {
                 return (
                     value.length > 0 &&
-                    /^[a-z0-9]+(\.|\-)?[a-z0-9]+\@mail\.ru$/i.test(value)
+                    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+                        value
+                    )
                 );
             }
         }
