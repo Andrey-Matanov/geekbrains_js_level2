@@ -17,5 +17,5 @@ export const renderHeader = () => {
         basket.classList.toggle("basket_active");
     });
 
-    basketContainer.get("basket");
+    basketContainer.render("basket");
 };

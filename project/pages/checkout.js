@@ -18,7 +18,7 @@ const initiatePage = () => {
 
 const renderPage = () => {
     renderHeader();
-    basket.get("checkout");
+    basket.render("checkout");
 };
 
 initiatePage();
