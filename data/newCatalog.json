@@ -1,0 +1,92 @@
+[
+    {
+        "id": 115,
+        "title": "Черная футболка",
+        "category": "футболка",
+        "discount": 5,
+        "price": 150,
+        "img": "tshirts/black_tshirt.jpg",
+        "fullname": "black_tshirt"
+    },
+    {
+        "id": 116,
+        "title": "Оранжевая футболка",
+        "category": "футболка",
+        "discount": 5,
+        "price": 130,
+        "img": "tshirts/orange_tshirt.jpg",
+        "fullname": "orange_tshirt"
+    },
+    {
+        "id": 117,
+        "title": "Синяя футболка",
+        "category": "футболка",
+        "discount": 5,
+        "price": 140,
+        "img": "tshirts/blue_tshirt.png",
+        "fullname": "blue_tshirt"
+    },
+    {
+        "id": 234,
+        "title": "Белые носки",
+        "category": "носки",
+        "discount": 0,
+        "price": 50,
+        "img": "socks/white_socks.jpg",
+        "fullname": "white_socks"
+    },
+    {
+        "id": 235,
+        "title": "Зеленые носки",
+        "category": "носки",
+        "discount": 0,
+        "price": 50,
+        "img": "socks/green_socks.jpg",
+        "fullname": "green_socks"
+    },
+    {
+        "id": 236,
+        "title": "Черные носки",
+        "category": "носки",
+        "discount": 0,
+        "price": 50,
+        "img": "socks/black_socks.jpeg",
+        "fullname": "black_socks"
+    },
+    {
+        "id": 567,
+        "title": "Серая куртка",
+        "category": "куртка",
+        "discount": 5,
+        "price": 350,
+        "img": "jackets/gray_jacket.jpg",
+        "fullname": "gray_jacket"
+    },
+    {
+        "id": 568,
+        "title": "Красная куртка",
+        "category": "куртка",
+        "discount": 5,
+        "price": 350,
+        "img": "jackets/red_jacket.jpg",
+        "fullname": "red_jacket"
+    },
+    {
+        "id": 875,
+        "title": "Мужские туфли",
+        "category": "обувь",
+        "discount": 10,
+        "price": 250,
+        "img": "shoes/men_shoes.jpg",
+        "fullname": "men_shoes"
+    },
+    {
+        "id": 876,
+        "title": "Женские туфли",
+        "category": "обувь",
+        "discount": 10,
+        "price": 250,
+        "img": "shoes/women_shoes.jpg",
+        "fullname": "women_shoes"
+    }
+]
