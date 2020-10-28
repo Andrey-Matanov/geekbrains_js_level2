@@ -104,5 +104,5 @@ const basketItems = [
     },
 ];
 
-export const basket = new Basket(basketItems);
+export const basket = new Basket();
 export const catalog = new Catalog();

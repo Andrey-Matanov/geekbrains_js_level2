@@ -1,4 +1,4 @@
-import { basket as basketContainer } from "../data.js";
+import { basket as basketContainer } from "../Basket.js";
 import returnHeaderHTML from "./header_html.js";
 
 export const initiateHeader = () => {

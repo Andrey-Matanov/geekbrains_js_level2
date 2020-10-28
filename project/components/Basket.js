@@ -1,9 +1,112 @@
 import BasketItem from "./BasketItem.js";
 
+const basketItems = [
+    {
+        id: 115,
+        title: "Черная футболка",
+        category: "футболка",
+        discount: 5,
+        fullname: "black_tshirt",
+        price: 150,
+        img: "tshirts/black_tshirt.jpg",
+        amount: 2,
+    },
+    {
+        id: 116,
+        title: "Оранжевая футболка",
+        category: "футболка",
+        discount: 5,
+        fullname: "orange_tshirt",
+        price: 130,
+        img: "tshirts/orange_tshirt.jpg",
+        amount: 1,
+    },
+    {
+        id: 117,
+        title: "Синяя футболка",
+        category: "футболка",
+        discount: 5,
+        fullname: "blue_tshirt",
+        price: 140,
+        img: "tshirts/blue_tshirt.png",
+        amount: 3,
+    },
+    {
+        id: 234,
+        title: "Белые носки",
+        category: "носки",
+        discount: 0,
+        fullname: "white_socks",
+        price: 50,
+        img: "socks/white_socks.jpg",
+        amount: 2,
+    },
+    {
+        id: 235,
+        title: "Зеленые носки",
+        category: "носки",
+        discount: 0,
+        fullname: "green_socks",
+        price: 50,
+        img: "socks/green_socks.jpg",
+        amount: 2,
+    },
+    {
+        id: 236,
+        title: "Черные носки",
+        category: "носки",
+        discount: 0,
+        fullname: "black_socks",
+        price: 50,
+        img: "socks/black_socks.jpeg",
+        amount: 2,
+    },
+    {
+        id: 567,
+        title: "Серая куртка",
+        category: "куртка",
+        discount: 5,
+        fullname: "gray_jacket",
+        price: 350,
+        img: "jackets/gray_jacket.jpg",
+        amount: 1,
+    },
+    {
+        id: 568,
+        title: "Красная куртка",
+        category: "куртка",
+        discount: 5,
+        fullname: "red_jacket",
+        price: 350,
+        img: "jackets/red_jacket.jpg",
+        amount: 1,
+    },
+    {
+        id: 875,
+        title: "Мужские туфли",
+        category: "обувь",
+        discount: 10,
+        fullname: "men_shoes",
+        price: 250,
+        img: "shoes/men_shoes.jpg",
+        amount: 1,
+    },
+    {
+        id: 876,
+        title: "Женские туфли",
+        category: "обувь",
+        discount: 10,
+        fullname: "women_shoes",
+        price: 250,
+        img: "shoes/women_shoes.jpg",
+        amount: 1,
+    },
+];
+
 export default class Basket {
-    constructor(items) {
-        if (items.length > 0) {
-            this.basketItems = items;
+    constructor() {
+        if (basketItems.length > 0) {
+            this.basketItems = basketItems;
         }
         this.items = [];
         this.fetchedItems = null;
@@ -209,3 +312,5 @@ export default class Basket {
         }
     }
 }
+
+export const basket = new Basket();
