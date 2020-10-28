@@ -34,8 +34,6 @@ class InputValidation {
 
     checkInput = () => {
         const validation = this.validateValue();
-        console.log(this.label);
-        console.log(validation);
         if (validation) {
             this.input.classList.add(this.INPUT_SUCCESS);
             this.input.classList.remove(this.INPUT_FAILURE);
