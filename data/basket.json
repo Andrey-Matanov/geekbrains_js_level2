@@ -1,5 +1,5 @@
 [
-    { "id": 115, "title": "Черная футболка", "amount": 1 },
-    { "id": 235, "title": "Зеленые носки", "amount": 2 },
-    { "id": 568, "title": "Красная куртка", "amount": 1 }
+    { "id": 115, "title": "Черная футболка", "amount": 1, "fullname": "black_tshirt" },
+    { "id": 235, "title": "Зеленые носки", "amount": 2, "fullname": "green_socks" },
+    { "id": 568, "title": "Красная куртка", "amount": 1, "fullname": "red_jacket" }
 ]
