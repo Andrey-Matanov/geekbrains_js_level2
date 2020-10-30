@@ -23,7 +23,7 @@
         "category": "футболка",
         "discount": 5,
         "price": 140,
-        "img": "tshirts/blue_tshirt.png",
+        "img": "tshirts/blue_tshirt.jpg",
         "fullname": "blue_tshirt"
     },
     {
@@ -50,7 +50,7 @@
         "category": "носки",
         "discount": 0,
         "price": 50,
-        "img": "socks/black_socks.jpeg",
+        "img": "socks/black_socks.jpg",
         "fullname": "black_socks"
     },
     {
