@@ -188,6 +188,10 @@ textarea {
   color: white;
 }
 
+.basket__empty {
+  margin-bottom: 10px;
+}
+
 .catalog__wrapper {
   padding: 20px 0;
 }
@@ -211,12 +215,6 @@ textarea {
           flex-grow: 1;
 }
 
-.catalog_search__button {
-  padding: 0 15px;
-  background-color: #3c27ac;
-  color: white;
-}
-
 .checkout_basket {
   padding: 20px 0;
 }
@@ -232,6 +230,10 @@ textarea {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.checkout__empty_basket_heading {
+  margin-bottom: 20px;
 }
 
 .goods {
@@ -342,6 +344,10 @@ textarea {
   border-radius: 10px 10px 0 0;
   width: 100%;
   height: 300px;
+}
+
+.goods_item__category {
+  margin-bottom: 10px;
 }
 
 .goods_item__price {

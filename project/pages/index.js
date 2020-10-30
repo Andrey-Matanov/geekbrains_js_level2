@@ -1,27 +1,33 @@
-import renderFooter from "../components/footer/footer.js";
-import { initiateHeader, renderHeader } from "../components/header/header.js";
-import To_top_button from "../components/To_top_button.js";
-import { onScrollFunction } from "../scripts/common.js";
+import Header from "../components/Header.js";
+import Footer from "../components/Footer.js";
 
-const initiatePage = () => {
-    let top = document.createElement("div");
-    top.classList.add("top");
-    document.querySelector(".root").appendChild(top);
-
-    initiateHeader();
-
-    let heading = document.createElement("h1");
-    heading.innerText = "Главная";
-    top.appendChild(heading);
-
-    top.innerHTML += To_top_button();
-    onScrollFunction();
-    renderFooter();
-};
-
-const renderPage = () => {
-    renderHeader();
-};
-
-initiatePage();
-renderPage();
+const app = new Vue({
+    el: ".root",
+    components: {
+        "shop-header": Header,
+        "shop-footer": Footer,
+    },
+    template: `
+    <div class="root">
+        <div class="top">
+            <shop-header></shop-header>
+            <h1>Главная</h1>
+        </div>
+        <shop-footer></shop-footer>
+    </div>
+    `,
+    data: {
+        url: "http://localhost:3000/",
+        items: [],
+    },
+    methods: {
+        makeGETRequest(url) {
+            fetch(url)
+                .then((response) => response.json())
+                .then((data) => (this.items = data));
+        },
+    },
+    created() {
+        this.makeGETRequest(this.url);
+    },
+});
