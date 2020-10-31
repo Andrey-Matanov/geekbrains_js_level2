@@ -16,18 +16,4 @@ const app = new Vue({
         <shop-footer></shop-footer>
     </div>
     `,
-    data: {
-        url: "http://localhost:3000/",
-        items: [],
-    },
-    methods: {
-        makeGETRequest(url) {
-            fetch(url)
-                .then((response) => response.json())
-                .then((data) => (this.items = data));
-        },
-    },
-    created() {
-        this.makeGETRequest(this.url);
-    },
 });

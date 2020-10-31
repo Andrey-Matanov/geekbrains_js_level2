@@ -1,32 +1,22 @@
 [
-    {
-        "id": 115,
-        "title": "Черная футболка",
-        "category": "футболка",
-        "price": 150,
-        "discount": 5,
-        "amount": 1,
-        "fullname": "black_tshirt",
-        "img": "tshirts/black_tshirt.jpg"
-    },
-    {
-        "id": 235,
-        "title": "Зеленые носки",
-        "category": "носки",
-        "price": 50,
-        "discount": 0,
-        "amount": 2,
-        "fullname": "green_socks",
-        "img": "socks/green_socks.jpg"
-    },
-    {
-        "id": 568,
-        "title": "Красная куртка",
-        "category": "куртка",
-        "price": 350,
-        "discount": 5,
-        "amount": 1,
-        "fullname": "red_jacket",
-        "img": "jackets/red_jacket.jpg"
-    }
+	{
+		"id": 115,
+		"title": "Черная футболка",
+		"category": "футболка",
+		"discount": 5,
+		"price": 150,
+		"img": "tshirts/black_tshirt.jpg",
+		"fullname": "black_tshirt",
+		"amount": 8
+	},
+	{
+		"id": 116,
+		"title": "Оранжевая футболка",
+		"category": "футболка",
+		"discount": 5,
+		"price": 130,
+		"img": "tshirts/orange_tshirt.jpg",
+		"fullname": "orange_tshirt",
+		"amount": 3
+	}
 ]

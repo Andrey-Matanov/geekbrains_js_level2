@@ -197,6 +197,7 @@ textarea {
 }
 
 .catalog_search__container {
+  padding: 0 10px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
