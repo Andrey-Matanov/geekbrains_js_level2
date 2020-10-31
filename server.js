@@ -3,57 +3,73 @@ const cors = require("cors");
 const fs = require("fs");
 
 const app = express();
-
 app.use(cors());
 app.use(express.static(__dirname + "/data"));
 app.use(express.json());
 
-const goodsRouter = express.Router();
+app.get("/", (req, res) => {
+    res.send("Main");
+});
 
-app.get("/", (req, res) => res.send({ msg: "Hello, Vasya!" }));
-
-goodsRouter.get("/:id", (req, res) => {
-    fs.readFile("./data/catalog.json", (err, data) => {
-        if (!err) {
-            let good;
-            try {
-                const goods = JSON.parse(data);
-                good = goods.find((good) => good.id == req.params.id);
-            } catch (e) {
-                res.status(500).json({ error: "error parsing datafile" });
-            }
-
-            if (good) {
-                res.json({ good: good });
-            } else {
-                res.status(404).json("no such good with id " + req.params.id);
-            }
-        } else {
-            res.status(500).json({ error: "no data file!" });
+app.delete("/", (req, res) => {
+    fs.readFile("./data/basket.json", (err, data) => {
+        if (err) {
+            throw err;
         }
+        const item = req.body;
+        console.log(req.body);
+        let items = JSON.parse(data);
+
+        items.forEach((current) => {
+            if (current.fullname == item.fullname) {
+                current.amount--;
+            }
+        });
+        fs.writeFileSync(
+            "./data/basket.json",
+            JSON.stringify(items, null, "\t")
+        );
+        res.send("delete request done");
     });
 });
 
-goodsRouter.post("/", (req, res) => {
-    const newGood = req.body;
-    fs.readFile("./data/catalog.json", (err, data) => {
-        const goods = JSON.parse(data);
-
-        if (goods.find((good) => good.id_product == newGood.id_product)) {
-            res.status("400").json({
-                error: "already have good with id " + newGood.id_product,
-            });
-        } else {
-            goods.push(newGood);
-            fs.writeFileSync(
-                "./public/catalogData.json",
-                JSON.stringify(goods, null, "\t")
-            );
-            res.json({ result: "added good ok", id: newGood.id_product });
-        }
+app.get("/basket", (req, res) => {
+    fs.readFile("./data/basket.json", (err, data) => {
+        const items = JSON.parse(data);
+        res.send({ items });
     });
 });
 
-app.use("/api", goodsRouter);
+app.post("/basket", (req, res) => {
+    fs.readFile("./data/basket.json", (err, data) => {
+        if (err) {
+            throw err;
+        }
+        const item = req.body;
+        let items = JSON.parse(data);
+        let itemFound = false;
+        items.forEach((current) => {
+            if (current.fullname == item.fullname) {
+                current.amount++;
+                itemFound = true;
+            }
+        });
+        if (!itemFound) {
+            items.push(item);
+        }
+        fs.writeFileSync(
+            "./data/basket.json",
+            JSON.stringify(items, null, "\t")
+        );
+        res.send("ok");
+    });
+});
+
+app.get("/catalog", (req, res) => {
+    fs.readFile("./data/catalog.json", (err, data) => {
+        const items = JSON.parse(data);
+        res.send({ items });
+    });
+});
 
 app.listen(3000, () => console.log("Listening on port 3000"));

@@ -87,8 +87,7 @@ const Header = {
     data: function () {
         return {
             isBasketVisible: false,
-            url:
-                "https://raw.githubusercontent.com/Andrey-Matanov/geekbrains_js_level2/master/data/basket.json",
+            url: "http://localhost:3000/basket",
             basketItems: [],
         };
     },
@@ -98,15 +97,22 @@ const Header = {
         },
     },
     methods: {
+        makeGETRequest() {
+            fetch(this.url)
+                .then((response) => response.json())
+                .then((data) => {
+                    this.basketItems = data.items;
+                })
+                .catch(() => {
+                    this.basketItems = "Корзина недоступна";
+                });
+        },
         fullPath50(path) {
             return `../assets/50x50/` + path;
         },
     },
     created() {
-        fetch(this.url)
-            .then((response) => response.json())
-            .then((arr) => (this.basketItems = arr))
-            .catch(() => (this.basketItems = "Корзина недоступна"));
+        this.makeGETRequest();
     },
 };
 
