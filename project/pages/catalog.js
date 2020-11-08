@@ -1,6 +1,7 @@
 import { onScrollFunction } from "../scripts/common.js";
 import Header from "../components/Header.js";
 import Footer from "../components/Footer.js";
+import "../styles/styles.css";
 
 const app = new Vue({
     el: ".root",
@@ -74,10 +75,10 @@ const app = new Vue({
     data: {
         catalogURL: "http://localhost:3000/catalog",
         basketURL: "http://localhost:3000/basket",
+        basketAddURL: "http://localhost:3000/basket/add",
         catalogItems: [],
         searchLine: "",
     },
-
     methods: {
         makeGETRequest() {
             fetch(this.catalogURL)
@@ -92,12 +93,6 @@ const app = new Vue({
         fullPath(path) {
             return `../assets/` + path;
         },
-        addToBasket(event) {
-            hostBus.$emit(
-                "add-to-basket",
-                this.returnCatalogItem(event.current.dataset.fullname)
-            );
-        },
         returnCatalogItem(fullname) {
             const newItem = {};
             this.catalogItems.forEach((item) => {
@@ -110,21 +105,15 @@ const app = new Vue({
             return newItem;
         },
         async addProduct(event) {
+            event.preventDefault();
             const fullname = event.target.dataset.fullname;
-            console.log(fullname);
-            let postItem;
-            this.catalogItems.forEach((item) => {
-                if (item.fullname == fullname) {
-                    postItem = { ...item, amount: 1 };
-                }
-            });
-            const response = await fetch(this.basketURL, {
+            const response = await fetch(this.basketAddURL, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(postItem),
-            });
+                body: JSON.stringify({ fullname }),
+            }).then((response) => console.log(response));
         },
     },
     computed: {
@@ -138,8 +127,6 @@ const app = new Vue({
     },
     created() {
         this.makeGETRequest();
-    },
-    mounted() {
         onScrollFunction();
     },
 });

@@ -52,14 +52,14 @@ const app = new Vue({
                                 <button
                                     class="goods__item_add_button goods__item_button"
                                     :data-fullname="item.fullname"
-                                    @click="addItem"
+                                    @click="addProduct"
                                 >
                                     +
                                 </button>
                                 <button
                                     class="goods__item_remove_button goods__item_button"
                                     :data-fullname="item.fullname"
-                                    @click="removeItem"
+                                    @click="deleteProduct"
                                 >
                                     -
                                 </button>
@@ -106,6 +106,8 @@ const app = new Vue({
     `,
     data: {
         basketURL: "http://localhost:3000/basket",
+        basketAddURL: "http://localhost:3000/basket/add",
+        basketDeleteURL: "http://localhost:3000/basket/delete",
         basketItems: [],
     },
     computed: {
@@ -142,33 +144,25 @@ const app = new Vue({
         fullPath50(path) {
             return "../assets/50x50/" + path;
         },
-        async addItem(event) {
+        async addProduct(event) {
             const fullname = event.target.dataset.fullname;
-            console.log(fullname);
-            let postItem;
-            this.basketItems.forEach((item) => {
-                if (item.fullname == fullname) {
-                    postItem = { ...item, amount: 1 };
-                }
-            });
-            const response = await fetch(this.basketURL, {
+            const response = await fetch(this.basketAddURL, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(postItem),
-            });
+                body: JSON.stringify({ fullname }),
+            }).then((response) => console.log(response));
         },
-        removeItem(event) {
-            this.basketItems.forEach((basketItem) => {
-                if (basketItem.fullname == event.target.dataset.fullname) {
-                    basketItem.amount -= 1;
-                    if (basketItem.amount == 0) {
-                        const index = this.basketItems.indexOf(basketItem);
-                        this.basketItems.splice(index, 1);
-                    }
-                }
-            });
+        async deleteProduct(event) {
+            const fullname = event.target.dataset.fullname;
+            const response = await fetch(this.basketDeleteURL, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ fullname }),
+            }).then((response) => console.log(response));
         },
     },
     created() {
